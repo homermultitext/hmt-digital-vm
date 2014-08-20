@@ -22,13 +22,18 @@ Then, within your virtual (guest) machine:
     bash /vagrant/scripts/refresh.sh
     
     
-## Building and running the HMT system in one line
 
-Within your virtual machine:
+## Running and using the HMT system
+
+To build and run the HMT system in one line, within your virtual machine:
 
     bash /vagrant/scripts/all-hmt.sh
 
+From your host operating system, point a web browser at `http://localhost:8880`
+
 ## Other options
+
+See individual scripts to:
 
 - rebuild the HMT TTL graph
 - reload the HMT graph in a SPARQL endpoint
