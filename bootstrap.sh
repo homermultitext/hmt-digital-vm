@@ -34,12 +34,13 @@ apt-get install -y maven
 
 # Service suite:
 apt-get install -y apache2
+apt-get install -y libapache2-mod-fastcgi
+apt-get install -y iipimage-server
 
 apt-get install -y tomcat6
 
-apt-get install -y iipimage-server
 
-# Praticalfor local work:
+# Practical to have CLI browsing for local work:
 apt-get install -y elinks
 
 
