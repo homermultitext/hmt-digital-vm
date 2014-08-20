@@ -9,7 +9,7 @@ A Vagrant VM configuration for serving the HMT project archive with the hmt-digi
 - VirtualBox: <https://www.virtualbox.org/wiki/Downloads>
 
 
-## Installation
+## Installing the virtual machine
 
 In your host operating system:
 
@@ -18,6 +18,20 @@ In your host operating system:
     
 Then, within your virtual (guest) machine:
 
-    cd /vagrant
-    bash scripts/refresh.sh
+    
+    bash /vagrant/scripts/refresh.sh
+    
+    
+## Building and running the HMT system in one line
+
+Within your virtual machine:
+
+    bash /vagrant/scripts/all-hmt.sh
+
+## Other options
+
+- rebuild the HMT TTL graph
+- reload the HMT graph in a SPARQL endpoint
+- restart the servlet container
+
     
