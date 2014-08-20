@@ -12,6 +12,7 @@ echo Installed git at $GIT
 # in case Neel Smith needs to work on
 # the machine
 apt-get install -y emacs
+
 # and the other true editor
 # in case Chris Blackwell needs to work on
 # the machine
@@ -26,6 +27,8 @@ apt-get install -y sqlite
 # Get full JDK *now* so we don't pull in
 # jre as a dependency and have to
 # add jdk later...
+
+
 apt-get install -y openjdk-7-jdk
 
 # build system and dependency mgt
@@ -36,6 +39,18 @@ apt-get install -y maven
 apt-get install -y apache2
 apt-get install -y libapache2-mod-fastcgi
 apt-get install -y iipimage-server
+
+
+# Mods to accommodate apache 2.4's default configuration
+# settings:
+mkdir /usr/share/iipimage-server
+cp /usr/lib/iipimage-server/iipsrv.fcgi /usr/share/iipimage-server/iipsrv.fcgi
+cp /vagrant/system/iipserv.conf  /etc/apache2/mods-available/iipsrv.conf
+
+echo "Restarting apache with modified conifguration for iipsrv..."
+system apache2 restart
+
+
 
 apt-get install -y tomcat6
 
