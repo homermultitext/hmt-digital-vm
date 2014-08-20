@@ -32,6 +32,18 @@ apt-get install -y openjdk-7-jdk
 apt-get install -y gradle
 apt-get install -y maven
 
+# Service suite:
+apt-get install -y apache2
+
+apt-get install -y tomcat6
+
+apt-get install -y iipimage-server
+
+# Praticalfor local work:
+apt-get install -y elinks
+
+
+
 # Update and trust apt to clean up some space for us:
 apt-get upgrade
 apt-get -y autoremove
