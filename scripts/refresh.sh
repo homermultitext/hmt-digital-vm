@@ -7,6 +7,7 @@ echo "Copying web pages into place.."
 sudo cp -r -u /vagrant/system/web/* /var/www/html
 
 
+#http://apache.arvixe.com/jena/binaries/
 
 ## Check out all required repos:
 # hmt-archive
