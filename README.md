@@ -52,6 +52,6 @@ The virtual machine is a generic Ubuntu 14.04 machine with the following service
 locations:
 
 
-- `apache2` running on port 80 (mapped to port 8880 on your host machine).
+- `apache2` running on port 80 (mapped to port 8880 on your host machine), with the `iipsrv` fast-cgi running on `http://localhost/iipsrv/iipsrv.fcgi` (for CITE Image service).  Configuration is in `/etc/apache2`, and web root is in `/var/www/html`.
 - `tomcat6` running on port 8080.  CATALINA_HOME is in  `/usr/share/tomcat6` and CATALINA_BASE in `/var/lib/tomcat6`.
 - `apache-jena` and `jena-fuseki`
