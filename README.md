@@ -44,8 +44,7 @@ will be used:  otherwise, the current master branch will be used.
 
 ## Advanced configuration
 
-- configuring a CITE image service
-- choosing a branch of `htm-archive` to build
+- configuring a CITE image service.  (TBA)
 
 ## What's installed where
 
