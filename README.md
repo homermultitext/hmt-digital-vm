@@ -37,10 +37,11 @@ From your host operating system, point a web browser at `http://localhost:8880`
 
 
 
-- rebuild the HMT TTL graph: `/vagrant/scripts/build-hmt.sh [BRANCH]`  If BRANCH is given, that branch of the hmt-archive
+- rebuild the HMT TTL graph: `/vagrant/scripts/build-ttl.sh [BRANCH]`  If BRANCH is given, that branch of the hmt-archive
 will be used:  otherwise, the current master branch will be used.
 - reload the HMT graph in a SPARQL endpoint: `/vagrant/scripts/load-hmt.sh`
-- restart the servlet container: `/vagrant/scripts/run-hmt.sh`
+- rebuild the hmt-digital war file: `/vagrant/scripts/build-war.sh`
+- install the hmt-digital war file in the servlet container: `/vagrant/scripts/run-hmt.sh`
 
 ## Advanced configuration
 
