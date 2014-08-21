@@ -67,8 +67,18 @@ apt-get -y autoremove
 
 echo "Ran autoremove."
 
-# ADD THIS IF WE NEED TO SET .profile FOR ACCOUNT:
+
 echo "Setting up account directory."
 /bin/cp "/vagrant/system/dotprofile" "/home/vagrant/.profile"
 
+
+# Set up proxying:
+/bin/cp /vagrant/system/tc-server.xml /etc/tomcat6/server.xml 
+/bin/cp /vagrant/system/000-default.conf-apache 000-default.conf
+
+a2enmod  proxy
+a2enmod proxy_http
+
+service tomcat6 restart
+service apache2 restart
 
