@@ -68,7 +68,7 @@ apt-get -y autoremove
 echo "Ran autoremove."
 
 # ADD THIS IF WE NEED TO SET .profile FOR ACCOUNT:
-#echo "Setting up account directory."
-#/bin/cp "/vagrant/dotprofile" "/home/vagrant/.profile"
+echo "Setting up account directory."
+/bin/cp "/vagrant/system/dotprofile" "/home/vagrant/.profile"
 
 
