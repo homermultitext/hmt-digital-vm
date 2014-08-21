@@ -8,6 +8,8 @@ A Vagrant VM configuration for building a graph of the HMT project archive, and 
 - vagrant: <http://www.vagrantup.com/downloads.html>
 - VirtualBox: <https://www.virtualbox.org/wiki/Downloads>
 
+The initial build requires internet access;  after the initial build, you can
+run the virtual machine offline.
 
 ## Installing the virtual machine
 
@@ -39,4 +41,9 @@ See individual scripts to:
 - reload the HMT graph in a SPARQL endpoint
 - restart the servlet container
 
+## Advanced configuration
+
+- configuring a CITE image service
+- choosing a branch of `htm-archive` to build
+- 
     
