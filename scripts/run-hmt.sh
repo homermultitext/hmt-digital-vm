@@ -1,3 +1,19 @@
 #!/usr/bin/env /bin/bash
-
+#
 # install hmt-digital.war in tomcat and restart tc
+#
+
+WAR=/vagrant/repositories/citeservlet/build/libs/citeservlet-0.9.0.war
+
+RM=`which rm`
+CP=`which cp`
+
+if [ ! -f $WAR ]; then
+    echo "No war file built."
+elif 
+    sudo service tomcat6 stop
+    sudo $RM /var/lib/tomcat6/webapps/hmt-digital.war
+    sudo $RM -rf /var/lib/tomcat6/webapps/hmt-digital
+    sudo $CP $WAR /var/lib/tomcat6/webapps/hmt-digital.war
+    sudo service tomcat6 start
+fi
