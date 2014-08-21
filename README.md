@@ -39,9 +39,9 @@ From your host operating system, point a web browser at `http://localhost:8880`
 
 - rebuild the HMT TTL graph: `build-ttl.sh [BRANCH]`  If BRANCH is given, that branch of the hmt-archive
 will be used:  otherwise, the current master branch will be used.
-- reload the HMT graph in a SPARQL endpoint: `load-hmt.sh`
+- reload the HMT graph in a SPARQL endpoint: `load-ttl.sh`
 - rebuild the hmt-digital war file: `build-war.sh`
-- install the hmt-digital war file in the servlet container: `run-hmt.sh`
+- install the hmt-digital war file in the servlet container: `run-war.sh`
 
 ## Advanced configuration
 
