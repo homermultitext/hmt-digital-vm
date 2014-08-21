@@ -19,7 +19,7 @@ In your host operating system:
 Then, within your virtual (guest) machine:
 
     
-    bash /vagrant/scripts/refresh.sh
+    /vagrant/scripts/refresh.sh
     
     
 
@@ -27,7 +27,7 @@ Then, within your virtual (guest) machine:
 
 To build and run the HMT system in one line, within your virtual machine:
 
-    bash /vagrant/scripts/all-hmt.sh
+    /vagrant/scripts/all-hmt.sh
 
 From your host operating system, point a web browser at `http://localhost:8880`
 
