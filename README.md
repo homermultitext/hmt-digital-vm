@@ -35,11 +35,12 @@ From your host operating system, point a web browser at `http://localhost:8880`
 
 ## Other options
 
-See individual scripts to:
 
-- rebuild the HMT TTL graph
-- reload the HMT graph in a SPARQL endpoint
-- restart the servlet container
+
+- rebuild the HMT TTL graph: `/vagrant/scripts/build-hmt.sh [BRANCH]`  If BRANCH is given, that branch of the hmt-archive
+will be used:  otherwise, the current master branch will be used.
+- reload the HMT graph in a SPARQL endpoint: `/vagrant/scripts/load-hmt.sh`
+- restart the servlet container: `/vagrant/scripts/run-hmt.sh`
 
 ## Advanced configuration
 
