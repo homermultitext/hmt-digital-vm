@@ -5,7 +5,7 @@ A Vagrant VM configuration for building a graph of the HMT project archive, and 
 
 ## Prerequisites
 
-- vagrant: <http://www.vagrantup.com/downloads.html>
+- Vagrant: <http://www.vagrantup.com/downloads.html>
 - VirtualBox: <https://www.virtualbox.org/wiki/Downloads>
 
 The initial build requires internet access;  after the initial build, you can
