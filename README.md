@@ -46,5 +46,12 @@ See individual scripts to:
 - configuring a CITE image service
 - choosing a branch of `htm-archive` to build
 
+## What's installed where
+
+The virtual machine is a generic Ubuntu 14.04 machine with the following services installed in default 
+locations:
 
 
+- `apache2` running on port 80 (mapped to port 8880 on your host machine).
+- `tomcat6` running on port 8080.  CATALINA_HOME is in  `/usr/share/tomcat6` and CATALINA_BASE in `/var/lib/tomcat6`.
+- `apache-jena` and `jena-fuseki`
