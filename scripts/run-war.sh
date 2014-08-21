@@ -10,7 +10,7 @@ CP=`which cp`
 
 if [ ! -f $WAR ]; then
     echo "No war file built."
-elif 
+else 
     sudo service tomcat6 stop
     sudo $RM /var/lib/tomcat6/webapps/hmt-digital.war
     sudo $RM -rf /var/lib/tomcat6/webapps/hmt-digital
