@@ -74,7 +74,7 @@ echo "Setting up account directory."
 
 # Set up proxying:
 /bin/cp /vagrant/system/tc-server.xml /etc/tomcat6/server.xml 
-/bin/cp /vagrant/system/000-default.conf-apache 000-default.conf
+/bin/cp /vagrant/system/000-default.conf-apache /etc/apache2/sites-available/000-default.conf
 
 a2enmod  proxy
 a2enmod proxy_http
