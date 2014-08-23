@@ -49,7 +49,7 @@ else
     mkdir /usr/share/iipimage-server
     cp /usr/lib/iipimage-server/iipsrv.fcgi /usr/share/iipimage-server/iipsrv.fcgi
 fi
-cp /vagrant/system/iipserv.conf  /etc/apache2/mods-available/iipsrv.conf
+cp /vagrant/system/iipsrv.conf  /etc/apache2/mods-available/iipsrv.conf
 echo "Restarting apache with modified conifguration for iipsrv..."
 system apache2 restart
 
