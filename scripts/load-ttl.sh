@@ -34,7 +34,7 @@ sudo chown -R vagrant $TDBDIR
 
 # Restart fuseki:
 echo Starting fuseki:  sudo $JENA --port=$PORT --config=$CONF
-sudo $JENA --port=$PORT --config=$CONF
+$JENA --port=$PORT --config=$CONF
 echo ""
 echo Done.  SPARQL endpoint running on port $PORT.
 

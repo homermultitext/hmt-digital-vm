@@ -17,7 +17,7 @@ if [ -d $JENA_DIR ]; then
     echo "apache-jena already installed."
 else 
     echo  "Downloading apache-jena package..."
-    $CURL http://apache.arvixe.com/jena/binaries/${JENA_VERSION}-distribution.tar.gz  > /tmp/jena.tgz
+    $CURL http://apache.arvixe.com/jena/binaries/${JENA_VERSION}.tar.gz  > /tmp/jena.tgz
     cd /opt
     sudo $TAR -zvxf /tmp/jena.tgz
     $RM /tmp/jena.tgz
@@ -28,7 +28,7 @@ if [ -d $FUSEKI_DIR ]; then
     echo "jena-fuseki already installed."
 else 
     echo "Downloading fuseki server..."
-    $CURL http://apache.arvixe.com/jena/binaries/jena-fuseki-1.1.0-distribution.tar.gz > /tmp/fuseki.tgz
+    $CURL http://apache.arvixe.com/jena/binaries/${FUSEKI_VERSION}-distribution.tar.gz > /tmp/fuseki.tgz
     cd /opt 
     sudo $TAR -zxvf /tmp/fuseki.tgz
     $RM /tmp/fuseki.tgz
