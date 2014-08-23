@@ -15,8 +15,8 @@ $GIT checkout $BRANCH
 $GRADLE clean
 $GRADLE allTtl
 
-$MV /vagrant/data/hmt.ttl /vagrant/data/hmt.tll-back
-$MV /vagrant/repositories/hmt-archive/build/rdf/all.ttl /vagrant/data/hmt.ttl
+#$MV /vagrant/data/hmt.ttl /vagrant/data/hmt.tll-back
+#$MV /vagrant/repositories/hmt-archive/build/rdf/all.ttl /vagrant/data/hmt.ttl
 
 
 

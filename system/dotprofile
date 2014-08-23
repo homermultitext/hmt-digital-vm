@@ -1,3 +1,8 @@
-export PATH=/vagrant/scripts:$PATH
+
+export FUSEKI_HOME=/opt/jena-fuseki-1.1.0
+
+export PATH=/vagrant/scripts:$FUSEKI_HOME:$PATH
+
+
 
 

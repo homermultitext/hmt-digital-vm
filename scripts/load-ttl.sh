@@ -3,11 +3,13 @@
 
 # load and start fuseki via tdbloader2
 
+# NB:  with shared directories extension in Vagrant,
+# the TDB directory needs to be *outside* the shared
+#  directory!
 
+TDBDIR=/tmp/tdbs
 
-#CONFDIR=/Users/nsmith/Desktop/DT-data/fuseki-confs
 CONF=/vagrant/system/fuseki-conf.ttl
-TDBDIR=/vagrant/data/tdbs
 TTL=/vagrant/data/hmt.ttl
 
 
@@ -25,12 +27,14 @@ fi
 
 # Load ttl:
 echo Loading data into new tdb data directory:
-echo sudo $TDBLOADER -loc $TDBDIR $TTL
-sudo $TDBLOADER -loc $TDBDIR $TTL
+echo $TDBLOADER --loc $TDBDIR $TTL
+$TDBLOADER --loc $TDBDIR $TTL
+
+sudo chown -R vagrant $TDBDIR
 
 # Restart fuseki:
-echo Starting fuseki:  $JENA --port=$PORT --config=$CONF
-$JENA --port=$PORT --config=$CONF
+echo Starting fuseki:  sudo $JENA --port=$PORT --config=$CONF
+sudo $JENA --port=$PORT --config=$CONF
 echo ""
 echo Done.  SPARQL endpoint running on port $PORT.
 

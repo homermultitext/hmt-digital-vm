@@ -1,22 +1,45 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+
+# Path to use if you want to mount a second shared folder
+# for HMT pyramidal images:
+PYRAMID_PATH = "/Volumes/HMT/pyramids"
+
+
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  # All Vagrant configuration is done here. The most common configuration
-  # options are documented and commented below. For a complete reference,
-  # please see the online documentation at vagrantup.com.
+    # All Vagrant configuration is done here. The most common configuration
+    # options are documented and commented below. For a complete reference,
+    # please see the online documentation at vagrantup.com.
 
-  # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "puphpet/ubuntu1404-x64"
+    # Every Vagrant virtual environment requires a box to build off of.
+    config.vm.box = "puphpet/ubuntu1404-x64"
+    if ARGV[1] == 'hmt'
+      ARGV.delete_at(1)
+      pyramids = true
+    else
+      pyramids = false
+    end
 
+    if pyramids == true
+      config.vm.define :hmt do |hmt|
+                 # HMT boots from a simple shell script:
+                 config.vm.provision :shell, :path => "system/bootstrap.sh"
+                 config.vm.network "forwarded_port", guest: 80, host: 8880
+                 config.vm.synced_folder PYRAMID_PATH, "/pyramids"
+               end
+    end
 
-  # HMT boots from a simple shell script:
-  config.vm.provision :shell, :path => "system/bootstrap.sh"
-
-
+    if pyramids == false
+      config.vm.define :normal do |normal|
+                 # HMT boots from a simple shell script:
+                 config.vm.provision :shell, :path => "system/bootstrap.sh"
+                 config.vm.network "forwarded_port", guest: 80, host: 8880
+               end
+    end
 
 
   # Disable automatic box update checking. If you disable this, then
@@ -27,7 +50,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  config.vm.network "forwarded_port", guest: 80, host: 8880
+  #config.vm.network "forwarded_port", guest: 80, host: 8880
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
