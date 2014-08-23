@@ -43,9 +43,18 @@ will be used:  otherwise, the current master branch will be used.
 - rebuild the hmt-digital war file: `build-war.sh`
 - install the hmt-digital war file in the servlet container: `run-war.sh`
 
-## Advanced configuration
+## Running a local image service
 
-- configuring a CITE image service.  (TBA)
+By default, the virtual machine is configured to use the image service at `www.homermultitext.org`.  If you have
+a set of pyramidal files on a local disk, you can easily use them to serve a local image service.
+
+`hmt-digital` defines two virtual machines:  in addition to the default machine, a second machine named `hmt` attempts to mount a file system at `/Volumes/HMT/pyramids` in the host operating system at `/pyramids` in the VM, so if you have a directory of pyramidal images on your host system at that location, they will be available in the VM as well.  To use the second VM, include its name in all vagrant commands. e.g.,
+
+    vagrant up hmt
+    vagrant ssh hmt
+    
+
+**ADD*:  how to configure a CITE image service.  (TBA)
 
 ## What's installed where
 
