@@ -48,9 +48,9 @@ will be used:  otherwise, the current master branch will be used.
 By default, the virtual machine is configured to use the image service at `www.homermultitext.org`.  If you have
 a set of pyramidal files on a local disk, you can easily use them to serve a local image service.
 
-The Vagrant script checks an environmental variable named `PYRAMIDS`:  if it is defined, it attempts to mount a file system at `/Volumes/HMT/pyramids` in the host operating system at `/pyramids` in the VM, so if you have a directory of pyramidal images on your host system at that location, they will be available in the VM as well.  You can set the environmental variable and start the VM in a single line like this:
+The Vagrant script checks an environmental variable named `IMGS`:  if it is defined, it attempts to mount a file system at `/Volumes/HMT/pyramids` in the host operating system at `/pyramids` in the VM, so if you have a directory of pyramidal images on your host system at that location, they will be available in the VM as well.  You can set the environmental variable and start the VM in a single line like this:
 
-    PYRAMIDS=true vagrant up
+    IMGS=true vagrant up
     
 
 **ADD*:  how to configure a CITE image service.  (TBA)
