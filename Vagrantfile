@@ -1,12 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-
-# Path to use if you want to mount a second shared folder
-# for HMT pyramidal images:
-PYRAMID_PATH = "/Volumes/HMT/pyramids"
-
-
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
@@ -17,29 +11,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # Every Vagrant virtual environment requires a box to build off of.
     config.vm.box = "puphpet/ubuntu1404-x64"
-    if ARGV[1] == 'hmt'
-      ARGV.delete_at(1)
-      pyramids = true
-    else
-      pyramids = false
+
+    # HMT boots from a simple shell script:
+    config.vm.provision :shell, :path => "system/bootstrap.sh"
+    config.vm.network "forwarded_port", guest: 80, host: 8880
+    
+    # Use PYRAMIDS to define a local path to the directory
+    # root for the image service to use:
+    if ENV['PYRAMIDS']
+      config.vm.synced_folder ENV['PYRAMIDS'], "/pyramids"
     end
 
-    if pyramids == true
-      config.vm.define :hmt do |hmt|
-                 # HMT boots from a simple shell script:
-                 config.vm.provision :shell, :path => "system/bootstrap.sh"
-                 config.vm.network "forwarded_port", guest: 80, host: 8880
-                 config.vm.synced_folder PYRAMID_PATH, "/pyramids"
-               end
-    end
-
-    if pyramids == false
-      config.vm.define :normal do |normal|
-                 # HMT boots from a simple shell script:
-                 config.vm.provision :shell, :path => "system/bootstrap.sh"
-                 config.vm.network "forwarded_port", guest: 80, host: 8880
-               end
-    end
 
 
   # Disable automatic box update checking. If you disable this, then
