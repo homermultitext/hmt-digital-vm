@@ -42,6 +42,9 @@ will be used:  otherwise, the current master branch will be used.
 - reload the HMT graph in a SPARQL endpoint: `load-ttl.sh`
 - rebuild the hmt-digital war file: `build-war.sh`
 - install the hmt-digital war file in the servlet container: `run-war.sh`
+ 
+
+For more details with examples, see the project wiki.
 
 ## Running a local image service
 
