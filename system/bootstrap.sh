@@ -43,7 +43,7 @@ apt-get install -y iipimage-server
 
 # Mods to accommodate apache 2.4's default configuration
 # settings:
-if [ -d "/usr/share/iipimages-server" ]; then
+if [ -d "/usr/share/iipimage-server" ]; then
     cp /usr/lib/iipimage-server/iipsrv.fcgi /usr/share/iipimage-server/iipsrv.fcgi
 else 
     mkdir /usr/share/iipimage-server
@@ -51,7 +51,7 @@ else
 fi
 cp /vagrant/system/iipsrv.conf  /etc/apache2/mods-available/iipsrv.conf
 echo "Restarting apache with modified conifguration for iipsrv..."
-system apache2 restart
+service apache2 restart
 
 apt-get install -y tomcat6
 
