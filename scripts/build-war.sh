@@ -10,5 +10,13 @@ GRADLE=`which gradle`
 
 cd /vagrant/repositories/citeservlet
 
-$GRADLE -Pconf=${HMTDIGITAL}/confs/localconf.gradle   -Plinks=${HMTDIGITAL}/confs/locallinks.gradle   -Pcustom=${HMTDIGITAL}/hmt/ war
+echo "Build war file.  Clean out previous build."
+
+$GRADLE clean
+
+echo "Build new war file from vm* configuration files in hmt-digital repository"
+
+$GRADLE -Pconf=${HMTDIGITAL}/confs/vmconf.gradle   -Plinks=${HMTDIGITAL}/confs/vmlinks.gradle   -Pcustom=${HMTDIGITAL}/hmt/ war
+
+
 

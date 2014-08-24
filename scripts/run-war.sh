@@ -12,8 +12,10 @@ if [ ! -f $WAR ]; then
     echo "No war file built."
 else 
     sudo service tomcat6 stop
+    echo "Removing previous files"
     sudo $RM /var/lib/tomcat6/webapps/hmt-digital.war
     sudo $RM -rf /var/lib/tomcat6/webapps/hmt-digital
+    echo "Copying new war: $WAR"
     sudo $CP $WAR /var/lib/tomcat6/webapps/hmt-digital.war
     sudo service tomcat6 start
 fi
