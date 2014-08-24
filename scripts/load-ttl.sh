@@ -3,6 +3,14 @@
 
 # load and start fuseki via tdbloader2
 
+
+if [ -e /vagrant/repositories/hmt-archive/build/rdf/all.ttl ]; then
+    TTL=/vagrant/repositories/hmt-archive/build/rdf/all.ttl
+else
+    TTL=/vagrant/data/hmt.ttl
+fi
+echo "Load ttl from ${TTL}"|
+
 # NB:  with shared directories extension in Vagrant,
 # the TDB directory needs to be *outside* the shared
 #  directory!
@@ -10,7 +18,7 @@
 TDBDIR=/tmp/tdbs
 
 CONF=/vagrant/system/fuseki-conf.ttl
-TTL=/vagrant/data/hmt.ttl
+
 
 
 JENA=/opt/jena-fuseki-1.1.0/fuseki-server
