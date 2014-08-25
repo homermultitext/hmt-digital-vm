@@ -1,7 +1,8 @@
 #hmt-digital-vm#
 
 
-A Vagrant VM configuration for building a graph of the HMT project archive, and serving it with the `hmt-digital` servlet.  The configuration uses a 64-bit Ubuntu 14.04 operating system running in Virtual Box. 
+A Vagrant virtual machine for working with data from the HMT project archive using a locally running installation of the project's digital applications and services, `hmt-digital`. 
+
 
 ## Prerequisites
 
