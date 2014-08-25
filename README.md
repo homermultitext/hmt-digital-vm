@@ -33,18 +33,12 @@ To build and run the HMT system in one line, within your virtual machine:
 
 From your host operating system, point a web browser at `http://localhost:8880`
 
-## Other options
+## More information
 
 
 
-- rebuild the HMT TTL graph: `build-ttl.sh [BRANCH]`  If BRANCH is given, that branch of the hmt-archive
-will be used:  otherwise, the current master branch will be used.
-- reload the HMT graph in a SPARQL endpoint: `load-ttl.sh`
-- rebuild the hmt-digital war file: `build-war.sh`
-- install the hmt-digital war file in the servlet container: `run-war.sh`
- 
+For more information, see [the project wiki](https://github.com/homermultitext/hmt-digital-vm/wiki).
 
-For more details with examples, see [the project wiki](https://github.com/homermultitext/hmt-digital-vm/wiki).
 
 ## Running a local image service
 
@@ -60,12 +54,3 @@ This will start the VM, and make the host file system at `/Volumes/HMT/pyramids`
 
 **ADD*:  how to configure a CITE image service.  (TBA)
 
-## What's installed where
-
-The virtual machine is a generic Ubuntu 14.04 machine with the following services installed in default 
-locations:
-
-
-- `apache2` running on port 80 (mapped to port 8880 on your host machine), with the `iipsrv` fast-cgi running on `http://localhost/iipsrv/iipsrv.fcgi` (for CITE Image service).  Configuration is in `/etc/apache2`, and web root is in `/var/www/html`.
-- `tomcat6` running on port 8080.  CATALINA_HOME is in  `/usr/share/tomcat6` and CATALINA_BASE in `/var/lib/tomcat6`.
-- `apache-jena` and `jena-fuseki` are both installed in `/opt`.  `fuseki-server` is running on port 3030.
