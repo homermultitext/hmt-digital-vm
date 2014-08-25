@@ -44,7 +44,7 @@ will be used:  otherwise, the current master branch will be used.
 - install the hmt-digital war file in the servlet container: `run-war.sh`
  
 
-For more details with examples, see the project wiki.
+For more details with examples, see [the project wiki](https://github.com/homermultitext/hmt-digital-vm/wiki).
 
 ## Running a local image service
 
